@@ -1,0 +1,6 @@
+require("egor.plugins-setup")
+require("egor.core.options")
+require("egor.core.colourscheme")
+require("egor.core.keymaps")
+require("egor.plugins.comment")
+require("egor.plugins.nvim-tree")
