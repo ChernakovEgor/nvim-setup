@@ -1,8 +1,8 @@
 local opt = vim.opt -- global variable
 
 -- Line numbers --
-opt.relativenumber = true
-opt.number = true
+opt.relativenumber = true 
+opt.number = true -- setting both number and relative number to true makes hybrid number
 
 -- Tabs & Indentation --
 opt.tabstop = 2
