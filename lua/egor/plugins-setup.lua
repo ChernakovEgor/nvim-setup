@@ -15,7 +15,7 @@ end
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+    autocmd BufWritePost useins-setup.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator' -- tmux window navigation
   use 'szw/vim-maximizer'
   use 'numToStr/Comment.nvim'
-  use 'nvim-lua/plenary.nvim' -- lua functions tha plugins may use
+  use 'nvim-lua/plenary.nvim' -- lua functions tha useins may use
   use 'nvim-tree/nvim-tree.lua' -- file explorer
   use 'kyazdani42/nvim-web-devicons' -- vscode-like icons
   use 'xiyaowong/nvim-transparent'
@@ -39,20 +39,20 @@ return require('packer').startup(function(use)
   use({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
 
   -- Autocompletion --
---  use {'neoclide/coc.nvim', branch = 'release'}
-  -- autocompletion
-  use("hrsh7th/nvim-cmp") -- completion plugin
-  use("hrsh7th/cmp-buffer") -- source for text in buffer
-  use("hrsh7th/cmp-path") -- source for file system paths
-
+  use 'hrsh7th/nvim-cmp' -- completion plugin
+  use 'hrsh7th/cmp-buffer' -- source for text in buffer
+  use 'hrsh7th/cmp-path' -- source for file system paths
+  use 'hrsh7th/cmp-cmdline'
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
-  -- Snippets --
+--  use {'neoclide/coc.nvim', branch = 'release'}
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  -- Put this at the end after all useins
   if packer_bootstrap then
     require('packer').sync()
   end

@@ -7,4 +7,4 @@ require("egor.plugins.nvim-tree")
 require("egor.plugins.nvim-transparent")
 require("egor.plugins.lualine")
 require("egor.plugins.telescope")
-require("egor.plugins.nvim-cmp")
+require "egor.plugins.nvim-cmp"
