@@ -8,8 +8,8 @@ keymap.set("n", "x", '"_x') -- x will not save deleted character
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>+", "<C-x>") -- increment numbers
 
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+keymap.set("n", "<leader>s|", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>s-", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
