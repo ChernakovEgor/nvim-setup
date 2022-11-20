@@ -26,6 +26,7 @@ end
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
   use 'folke/tokyonight.nvim'
   use 'christoomey/vim-tmux-navigator' -- tmux window navigation
   use 'szw/vim-maximizer'
@@ -37,6 +38,8 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
   use({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
+  
+  use 'goolord/alpha-nvim' -- startup page
 
   -- Autocompletion --
   use 'neovim/nvim-lspconfig'
