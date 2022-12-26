@@ -7,4 +7,7 @@ require('lspconfig').clangd.setup {
         },
         filetypes = {"c", "cpp", "objc", "objcpp"},
 }
+
 require'lspconfig'.pyright.setup{}
+
+require'lspconfig'.tsserver.setup{}
