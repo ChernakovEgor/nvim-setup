@@ -43,6 +43,8 @@ return require('packer').startup(function(use)
   
   use 'goolord/alpha-nvim' -- startup page
 
+  use 'mfussenegger/nvim-dap' -- debug
+
   -- Autocompletion --
   use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
@@ -54,6 +56,15 @@ return require('packer').startup(function(use)
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
+
+  use {
+  'mrcjkb/haskell-tools.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim', -- optional
+  },
+  branch = '1.x.x', -- recommended
+}
  -- use {'neoclide/coc.nvim', branch = 'release'}
 
   -- Treesitter --
