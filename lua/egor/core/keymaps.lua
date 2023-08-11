@@ -23,6 +23,9 @@ keymap.set("n", "<leader>tc", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
+keymap.set("n", "<tab>", ":bn<CR>") -- next buffer
+keymap.set("n", "<S-tab>", ":bp<CR>") -- previos buffer
+keymap.set("n", "<leader>x", ":bd<CR>") -- previos buffer
 
 -- Plugin keymaps --
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize / restore window size
