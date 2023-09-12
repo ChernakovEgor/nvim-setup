@@ -1,5 +1,7 @@
 local opt = vim.opt -- global variable
 
+vim.g.instant_username="egor"
+
 -- Line numbers --
 opt.relativenumber = true
 opt.number = true -- setting both number and relative number to true makes hybrid number

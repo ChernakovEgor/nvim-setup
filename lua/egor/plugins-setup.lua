@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap' -- debug
 
   -- Autocompletion --
-  use 'williamboman/nvim-lsp-installer'
+  use "williamboman/mason-lspconfig.nvim"
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -83,6 +83,8 @@ return require('packer').startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+  use 'jbyuki/instant.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all useins

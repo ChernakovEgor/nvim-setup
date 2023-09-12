@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
-require('nvim-lsp-installer').setup {}
+-- require('nvim-lsp-installer').setup {}
 require('lspconfig').clangd.setup {
         cmd = {
             "clangd",
@@ -34,14 +34,22 @@ require('lspconfig').clangd.setup {
             '--query-driver="/usr/local/opt/gcc-arm-none-eabi-8-2019-q3-update/bin/arm-none-eabi-gcc"'
         },
         filetypes = {"c", "cpp", "objc", "objcpp"},
+        on_attach = on_attach,
 }
-
 
 require('lspconfig').pyright.setup{
   on_attach = on_attach
 }
 
-require'lspconfig'.hls.setup{
-        cmd = { "haskell-language-server-wrapper", "--lsp" },
-        filetypes = { "haskell", "lhaskell" }
+require('lspconfig').bashls.setup{
+  on_attach = on_attach
 }
+
+require('lspconfig').lua_ls.setup{
+  on_attach = on_attach
+}
+
+-- require'lspconfig'.hls.setup{
+--         cmd = { "haskell-language-server-wrapper", "--lsp" },
+--         filetypes = { "haskell", "lhaskell" }
+-- }
