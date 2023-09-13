@@ -1,95 +1,68 @@
--- Install packages on a new machine --
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
-
-
--- Reloads neovim after saving this file --
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-  augroup end
-]])
-
-local status, packer = pcall(require, "packer")
-if not status then
-  return
-end
-
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-
-  use 'folke/tokyonight.nvim'
-  -- use 'nyngwang/nvimgelion'
-
-  use 'christoomey/vim-tmux-navigator' -- tmux window navigation
-  use 'szw/vim-maximizer'
-  use 'numToStr/Comment.nvim'
-  use 'nvim-lua/plenary.nvim' -- lua functions tha useins may use
-  use 'nvim-tree/nvim-tree.lua' -- file explorer
-  use 'kyazdani42/nvim-web-devicons' -- vscode-like icons
-  use 'xiyaowong/nvim-transparent'
-  use 'nvim-lualine/lualine.nvim'
-  use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
-  use({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
-  use 'goolord/alpha-nvim' -- startup page
-
-  use 'mfussenegger/nvim-dap' -- debug
-
-  -- Autocompletion --
-  use "williamboman/mason-lspconfig.nvim"
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use("L3MON4D3/LuaSnip") -- snippet engine
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-  use("rafamadriz/friendly-snippets") -- useful snippets
-  use("williamboman/mason.nvim")
-
-  use "m4xshen/hardtime.nvim" -- erradicate bad habbits
-
-  use {
-  'mrcjkb/haskell-tools.nvim',
-  requires = {
-    'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope.nvim', -- optional
-  },
-  branch = '1.x.x', -- recommended
-}
- -- use {'neoclide/coc.nvim', branch = 'release'}
-
-  -- Treesitter --
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
   })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+
+require("lazy").setup({
+  -- Pretty
+  'folke/tokyonight.nvim',
+  -- 'nyngwang/nvimgelion'
+  'goolord/alpha-nvim', -- startup page
+  'kyazdani42/nvim-web-devicons',-- vscode-like icons
+  'xiyaowong/nvim-transparent',
+  'nvim-lualine/lualine.nvim',
+
+  'christoomey/vim-tmux-navigator',-- tmux window navigation
+  'szw/vim-maximizer',
+  'numToStr/Comment.nvim',
+  'nvim-lua/plenary.nvim',-- lua functions tha useins may use
+  'nvim-tree/nvim-tree.lua',-- file explorer
+
+  -- Telescope
+  { 'nvim-telescope/telescope.nvim', tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope-fzf-native.nvim', 
+   build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+
+   'nvim-treesitter/nvim-treesitter',
+--
+--  'mfussenegger/nvim-dap' -- debug
+--
+  -- LSP --
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+  'L3MON4D3/LuaSnip', -- snippet engine
+  'saadparwaiz1/cmp_luasnip', -- for autocompletion
+  'rafamadriz/friendly-snippets',  -- useful snippets
+  'williamboman/mason.nvim',
+
+--  "m4xshen/hardtime.nvim" -- erradicate bad habbits
+--
+-- -- use {'neoclide/coc.nvim', branch = 'release'}
+--
 
   -- Auto closing
-  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+  'windwp/nvim-autopairs', -- autoclose parens, brackets, quotes, etc...
+  'windwp/nvim-ts-autotag', -- autoclose tags
+--
+--  -- git integration
+  'lewis6991/gitsigns.nvim', -- show line modifications on left hand side
+--
+--  'jbyuki/instant.nvim'
 
-  -- git integration
-  use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-
-  use 'jbyuki/instant.nvim'
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all useins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+})
