@@ -40,7 +40,6 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
   use({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
-  
   use 'goolord/alpha-nvim' -- startup page
 
   use 'mfussenegger/nvim-dap' -- debug
@@ -57,6 +56,8 @@ return require('packer').startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
   use("williamboman/mason.nvim")
+
+  use "m4xshen/hardtime.nvim" -- erradicate bad habbits
 
   use {
   'mrcjkb/haskell-tools.nvim',
