@@ -16,7 +16,7 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 require("lazy").setup({
   -- Pretty
   'folke/tokyonight.nvim',
-  -- 'nyngwang/nvimgelion'
+  'rebelot/kanagawa.nvim',
   'goolord/alpha-nvim', -- startup page
   'kyazdani42/nvim-web-devicons',-- vscode-like icons
   'xiyaowong/nvim-transparent',
@@ -31,13 +31,12 @@ require("lazy").setup({
   -- Telescope
   { 'nvim-telescope/telescope.nvim', tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' } },
-  { 'nvim-telescope/telescope-fzf-native.nvim', 
+  { 'nvim-telescope/telescope-fzf-native.nvim',
    build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
 
    'nvim-treesitter/nvim-treesitter',
---
---  'mfussenegger/nvim-dap' -- debug
---
+   'mfussenegger/nvim-dap', -- debug
+
   -- LSP --
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
@@ -52,17 +51,12 @@ require("lazy").setup({
   'williamboman/mason.nvim',
 
 --  "m4xshen/hardtime.nvim" -- erradicate bad habbits
---
 -- -- use {'neoclide/coc.nvim', branch = 'release'}
---
 
   -- Auto closing
   'windwp/nvim-autopairs', -- autoclose parens, brackets, quotes, etc...
   'windwp/nvim-ts-autotag', -- autoclose tags
---
 --  -- git integration
   'lewis6991/gitsigns.nvim', -- show line modifications on left hand side
---
 --  'jbyuki/instant.nvim'
-
 })
