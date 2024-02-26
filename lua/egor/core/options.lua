@@ -23,8 +23,8 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- Appearence --
-opt.termguicolors = true
-opt.background = "dark"
+-- opt.termguicolors = false
+-- opt.background = "dark"
 opt.signcolumn = "yes"
 
 -- Backspace --

@@ -12,7 +12,7 @@ require('lualine').setup {
     component_separators = { left = '', right = ''},
     -- component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -27,12 +27,16 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = {
+      { 'mode', separator = { left = '' }, right_padding = 2 },
+    },
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'filetype'},
     lualine_y = {'searchcount'},
-    lualine_z = {'progress', 'location'}
+    lualine_z = {
+      {'location', separator = { left = '', right = '' }, left_padding = 2 },
+    }
   },
   inactive_sections = {
     lualine_a = {},
@@ -43,12 +47,16 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-    lualine_a = {'buffers'},
+    lualine_a = {
+      { 'buffers', separator = { left = '', right = '' }, right_padding = 2 },
+    },
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {'tabs'}
+    lualine_z = {
+      { 'tabs', separator = { left = '', right = '' }, left_padding = 2 },
+    }
   },
   winbar = {},
   inactive_winbar = {},
