@@ -3,16 +3,15 @@
 --   print("Lualine not installed")
 --   return
 -- end
-
--- lualine.setup()
+--
 require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
+    component_separators =  '|',
     -- component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -30,12 +29,13 @@ require('lualine').setup {
     lualine_a = {
       { 'mode', separator = { left = '' }, right_padding = 2 },
     },
+
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'filetype'},
     lualine_y = {'searchcount'},
     lualine_z = {
-      {'location', separator = { left = '', right = '' }, left_padding = 2 },
+      {'location', separator = {  right = '' }, left_padding = 2 },
     }
   },
   inactive_sections = {
@@ -48,10 +48,26 @@ require('lualine').setup {
   },
   tabline = {
     lualine_a = {
-      { 'buffers', separator = { left = '', right = '' }, right_padding = 2 },
     },
-    lualine_b = {},
-    lualine_c = {},
+    lualine_b = {
+              {
+        'buffers',
+      symbols = {
+        modified = ' ●',      -- Text to show when the buffer is modified
+        alternate_file = '', -- Text to show to identify the alternate file
+        directory =  '',     -- Text to show when the buffer is a directory
+      },
+        -- buffers_color = {
+        --   active = { bg = 'background', fg =  'foreground' },
+        --   inactive = { bg =  'black', fg =  'foreground' },
+      },
+        -- separator = { left = '|', right = '|' },
+        -- right_padding = 2,
+       --}
+
+    },
+    lualine_c = {
+    } ,
     lualine_x = {},
     lualine_y = {},
     lualine_z = {

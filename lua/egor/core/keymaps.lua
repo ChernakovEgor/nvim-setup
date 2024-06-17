@@ -17,6 +17,8 @@ keymap.set("n", "<leader>-", "<C-x>") -- increment numbers
 keymap.set("n", "<leader>s|", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>s-", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
+keymap.set("n", "<leader>sk", ":resize +3<CR>") -- make split windows equal width
+keymap.set("n", "<leader>sj", ":resize -3<CR>") -- make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<leader>tc", ":tabnew<CR>") -- open new tab
@@ -25,7 +27,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<tab>", ":bn<CR>") -- next buffer
 keymap.set("n", "<S-tab>", ":bp<CR>") -- previos buffer
-keymap.set("n", "<leader>x", ":bd<CR>") -- previos buffer
+keymap.set("n", "<leader>x", ":bd<CR>") -- close buffer
 
 -- Plugin keymaps --
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize / restore window size

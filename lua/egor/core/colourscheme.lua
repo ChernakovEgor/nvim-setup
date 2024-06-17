@@ -6,5 +6,5 @@
 --
 -- vim.cmd.colorscheme 'kanagawa'
 vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-vim.cmd.colorscheme 'gruvbox'
+-- vim.opt.background = 'dark'
+vim.cmd.colorscheme 'kanagawa'

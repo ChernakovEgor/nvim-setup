@@ -16,9 +16,11 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 require("lazy").setup({
   -- Pretty
   'folke/tokyonight.nvim',
+  "rebelot/kanagawa.nvim",
   'savq/melange-nvim',
   'sainnhe/everforest',
   'ellisonleao/gruvbox.nvim',
+  'maxmx03/solarized.nvim',
   'goolord/alpha-nvim', -- startup page
   'kyazdani42/nvim-web-devicons',-- vscode-like icons
   'xiyaowong/nvim-transparent',
