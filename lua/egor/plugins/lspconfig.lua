@@ -49,6 +49,10 @@ require('lspconfig').lua_ls.setup {
   on_attach = on_attach
 }
 
+require('lspconfig').gopls.setup {
+  on_attach = on_attach
+}
+
 -- require'lspconfig'.hls.setup{
 --         cmd = { "haskell-language-server-wrapper", "--lsp" },
 --         filetypes = { "haskell", "lhaskell" }

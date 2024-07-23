@@ -62,5 +62,4 @@ require("lazy").setup({
   'windwp/nvim-ts-autotag', -- autoclose tags
 --  -- git integration
   'lewis6991/gitsigns.nvim', -- show line modifications on left hand side
---  'jbyuki/instant.nvim'
 })

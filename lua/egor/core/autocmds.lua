@@ -23,3 +23,12 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     group = autocmd_group,
 })
 
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "*.go"},
+    desc = "Auto-format python files after saving",
+    callback = function()
+        local fileName = vim.api.nvim_buf_get_name(0)
+        vim.cmd(":silent !gofmt -s -w " .. fileName)
+    end,
+    group = autocmd_group,
+})
