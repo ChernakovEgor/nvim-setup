@@ -18,13 +18,13 @@ local dashboard = require "alpha.themes.dashboard"
 
   dashboard.section.buttons.val = {
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+    dashboard.button("r", "󱋡  Recently used files", ":Telescope oldfiles <CR>"),
   }
 
   local function footer()
     -- Number of plugins
     local datetime = os.date "%d-%m-%Y %H:%M:%S"
-    local plugins_text = "   "
+    local plugins_text = " "
       .. " plugins"
       .. "   v"
       .. vim.version().major
@@ -32,7 +32,7 @@ local dashboard = require "alpha.themes.dashboard"
       .. vim.version().minor
       .. "."
       .. vim.version().patch
-      .. "   "
+      .. "         󰥔  "
       .. datetime
 
     -- Quote
