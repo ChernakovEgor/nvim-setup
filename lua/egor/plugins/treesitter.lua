@@ -18,6 +18,7 @@ treesitter.setup({
   ensure_installed = {
     "json",
     "yaml",
+    "go",
     -- "html",
     "css",
     "markdown",
@@ -27,7 +28,9 @@ treesitter.setup({
     "dockerfile",
     "gitignore",
     "c",
-    "sql"
+    "sql",
+    "nix",
+    "latex"
   },
   -- auto install above language parsers
   auto_install = true,

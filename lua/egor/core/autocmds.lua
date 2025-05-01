@@ -32,3 +32,13 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     end,
     group = autocmd_group,
 })
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "*.nix"},
+    desc = "Auto-format python files after saving",
+    callback = function()
+        local fileName = vim.api.nvim_buf_get_name(0)
+        vim.cmd(":silent !nixfmt " .. fileName)
+    end,
+    group = autocmd_group,
+})
