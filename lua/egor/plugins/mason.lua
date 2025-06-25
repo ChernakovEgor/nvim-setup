@@ -29,7 +29,6 @@ require("mason").setup({
     }
 })
 
-require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "gopls", "pyright", "eslint", "ts_ls"}
+  ensure_installed = { "lua_ls", "gopls", "pyright"}
 }
 
