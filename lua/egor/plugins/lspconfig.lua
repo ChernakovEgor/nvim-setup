@@ -25,35 +25,31 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
+
 -- require('nvim-lsp-installer').setup {}
-require('lspconfig').clangd.setup {
-  cmd = {
-    "clangd",
-    "--background-index",
-    "--suggest-missing-includes",
-    '--query-driver="/usr/local/opt/gcc-arm-none-eabi-8-2019-q3-update/bin/arm-none-eabi-gcc"'
-  },
-  filetypes = { "c", "cpp", "cc", "h", "hpp", "objc", "objcpp" },
-  on_attach = on_attach,
-}
+-- require('lspconfig').clangd.setup {
+--   cmd = {
+--     "clangd",
+--     "--background-index",
+--     "--suggest-missing-includes",
+--     '--query-driver="/usr/local/opt/gcc-arm-none-eabi-8-2019-q3-update/bin/arm-none-eabi-gcc"'
+--   },
+--   filetypes = { "c", "cpp", "cc", "h", "hpp", "objc", "objcpp" },
+--   on_attach = on_attach,
+-- }
+--
+-- require('lspconfig').pyright.setup {
+--   on_attach = on_attach
+-- }
+--
+-- require('lspconfig').bashls.setup {
+--   on_attach = on_attach
+-- }
+--
+-- require('lspconfig').lua_ls.setup {
+--   on_attach = on_attach
+-- }
 
-require('lspconfig').pyright.setup {
-  on_attach = on_attach
-}
-
-require('lspconfig').bashls.setup {
-  on_attach = on_attach
-}
-
-require('lspconfig').lua_ls.setup {
-  on_attach = on_attach
-}
-
-require('lspconfig').gopls.setup {
-  on_attach = on_attach
-}
-
--- require'lspconfig'.hls.setup{
---         cmd = { "haskell-language-server-wrapper", "--lsp" },
---         filetypes = { "haskell", "lhaskell" }
+-- require('lspconfig').gopls.setup {
+--   on_attach = on_attach
 -- }
