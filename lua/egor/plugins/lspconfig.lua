@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 end
 
--- require('nvim-lsp-installer').setup {}
+
 vim.lsp.config["clangd"] = {
   cmd = {
     "clangd",

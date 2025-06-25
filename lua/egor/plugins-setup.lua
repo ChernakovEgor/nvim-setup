@@ -43,8 +43,9 @@ require("lazy").setup({
    'mfussenegger/nvim-dap', -- debug
 
   -- LSP --
-  'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
+  'williamboman/mason-lspconfig.nvim',
+  'williamboman/mason.nvim',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -53,7 +54,6 @@ require("lazy").setup({
   'L3MON4D3/LuaSnip', -- snippet engine
   'saadparwaiz1/cmp_luasnip', -- for autocompletion
   'rafamadriz/friendly-snippets',  -- useful snippets
-  'williamboman/mason.nvim',
 
 --  "m4xshen/hardtime.nvim" -- erradicate bad habbits
 -- -- use {'neoclide/coc.nvim', branch = 'release'}
