@@ -28,7 +28,3 @@ require("mason").setup({
         }
     }
 })
-
-  ensure_installed = { "lua_ls", "gopls", "pyright"}
-}
-

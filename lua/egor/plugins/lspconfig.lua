@@ -52,3 +52,13 @@ vim.lsp.config["lua_ls"] = {
 vim.lsp.config["gopls"] = {
   on_attach = on_attach
 }
+
+vim.lsp.enable('nixd')
+vim.lsp.config["nixd"] = {
+  cmd = {
+    "nixd"
+  },
+  filetypes = { "nix" },
+  root_markers = { "flake.nix", ".git" },
+  on_attach = on_attach
+}

@@ -19,7 +19,7 @@ treesitter.setup({
     "json",
     "yaml",
     "go",
-    -- "html",
+    "html",
     "css",
     "markdown",
     "bash",
@@ -30,7 +30,6 @@ treesitter.setup({
     "c",
     "sql",
     "nix",
-    "latex"
   },
   -- auto install above language parsers
   auto_install = true,
