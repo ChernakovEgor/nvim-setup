@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- require('nvim-lsp-installer').setup {}
-require('lspconfig').clangd.setup {
+vim.lsp.config["clangd"] = {
   cmd = {
     "clangd",
     "--background-index",
@@ -37,23 +37,18 @@ require('lspconfig').clangd.setup {
   on_attach = on_attach,
 }
 
-require('lspconfig').pyright.setup {
+vim.lsp.config["pyright"] = {
   on_attach = on_attach
 }
 
-require('lspconfig').bashls.setup {
+vim.lsp.config["bashls"] = {
   on_attach = on_attach
 }
 
-require('lspconfig').lua_ls.setup {
+vim.lsp.config["lua_ls"] = {
   on_attach = on_attach
 }
 
-require('lspconfig').gopls.setup {
+vim.lsp.config["gopls"] = {
   on_attach = on_attach
 }
-
--- require'lspconfig'.hls.setup{
---         cmd = { "haskell-language-server-wrapper", "--lsp" },
---         filetypes = { "haskell", "lhaskell" }
--- }
