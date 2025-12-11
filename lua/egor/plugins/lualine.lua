@@ -48,23 +48,25 @@ require('lualine').setup {
   },
   tabline = {
     lualine_a = {
+      {
+        'buffers',
+        symbols = {
+          modified = ' ●',      -- Text to show when the buffer is modified
+          alternate_file = '', -- Text to show to identify the alternate file
+          directory =  '',     -- Text to show when the buffer is a directory
+        },
+       buffers_color = {
+        -- Same values as the general color option can be used here.
+        active = {bg = 'background', fg = 'foreground'},   
+        inactive = {bg = 'black', fg = 'grey'},   
+      },
+      
+        -- separator = { left = '', right = '' }, 
+        right_padding = 2,
+       }
     },
     lualine_b = {
-              {
-        'buffers',
-      symbols = {
-        modified = ' ●',      -- Text to show when the buffer is modified
-        alternate_file = '', -- Text to show to identify the alternate file
-        directory =  '',     -- Text to show when the buffer is a directory
-      },
-        -- buffers_color = {
-        --   active = { bg = 'background', fg =  'foreground' },
-        --   inactive = { bg =  'black', fg =  'foreground' },
-      },
-        -- separator = { left = '|', right = '|' },
-        -- right_padding = 2,
-       --}
-
+      
     },
     lualine_c = {
     } ,
