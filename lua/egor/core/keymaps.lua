@@ -4,8 +4,8 @@ local keymap = vim.keymap
 -- General Keymaps --
 keymap.set("i", "jk", "<ESC>") -- in insert mode hitting jk will be the same as ESC
 keymap.set("n", "x", '"_x') -- x will not save deleted character
-keymap.set("n", "<Enter>", "o<ESC>")
-keymap.set("n", "<S-Enter>", "O<ESC>")
+-- keymap.set("n", "<Enter>", "o<ESC>")
+-- keymap.set("n", "<S-Enter>", "O<ESC>")
 keymap.set("x", "<leader>p", "\"_dP")
 
 keymap.set("n", "<C-u>", "<C-u>zz")
