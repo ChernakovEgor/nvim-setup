@@ -1,7 +1,6 @@
 local opt = vim.opt -- global variable
 
-vim.g.instant_username="egor"
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Line numbers --
 opt.relativenumber = true
